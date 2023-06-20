@@ -125,11 +125,11 @@ Fraction Fraction:: operator++() {
 };
 // 6.2 Increment postfix
 Fraction Fraction:: operator++ (int) {
-	
+	Fraction duplicate(*this);
 	Fraction f1(numerator_, denominator_);
 	Fraction f2 = f1++;
 	//reduce(f3.numerator_, f3.denominator_);
-	return f2;
+	return duplicate;
 };
 // 7.1 Decrement prefix
 Fraction Fraction::operator -- () {
@@ -144,12 +144,12 @@ Fraction Fraction::operator -- () {
 };
 // 7.1 Decrement postfix
 Fraction Fraction:: operator -- (int) {
-	int old_num = numerator_;
-	int old_denom = denominator_;
+	Fraction duplicate(*this);
 	Fraction f1(numerator_, denominator_);
-	Fraction f2(old_num, old_denom);
-	Fraction f3 = (--f1) * -1;
-	return f3;
+	Fraction f2 = (--f1) * -1;
+	numerator_ = f2.numerator_;
+	denominator_ = f2.denominator_;
+	return duplicate;
 };
 
 //print
