@@ -55,14 +55,15 @@ int main(int argc, char** argv) {
 	std::cout << "Значение дроби 1 = ";
 	f7_old.print();
 
-	Fraction f9_old = f7_old--;
-	Fraction f9 = f9_old;
-	Fraction f10 = f9 * f2;
+	Fraction f_a = f7_old;
+    Fraction f9 = f7_old--;
+	Fraction f10 = f7_old * f2;
+	
 
-	std::cout << num << "/" << denom <<"--"<<" * " << num_2 << "/" << denom_2 << "= ";
+	std::cout << f_a.get_numerator() << "/" << f_a.get_denominator() <<"--"<<" * " << num_2 << "/" << denom_2 << "= ";
 	f10.print();
 	std::cout << "Значение дроби 1 = ";
-	f9_old.print();
+	f9.print();
 
 	//std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
 	
