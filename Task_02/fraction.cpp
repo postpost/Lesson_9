@@ -101,54 +101,32 @@ Fraction Fraction::operator/(const Fraction& right) {
 	reduce(new_num, new_denom);
 	return Fraction(new_num, new_denom);
 };
-// 5. Unary minus
-//Fraction Fraction::operator-(const Fraction& right) {
-//
-//	int new_num = -right.numerator_;
-//	int new_denom = -right.denominator_;
-//	return *this;
-//};
+ //5. Unary minus
+Fraction Fraction::operator-() {
+	int new_num = -numerator_;
+	return Fraction (new_num, denominator_);
+};
+
 // 6.1 Increment prefix
 Fraction Fraction:: operator++() {
-
-	int whole_num = denominator_, whole_denom = denominator_;
-	Fraction f1(whole_num, whole_denom);
-	Fraction f2(numerator_, denominator_);
-	Fraction f3 = (f1 + f2);
-	//reduce(f3.numerator_, f3.denominator_);
-	numerator_ = f3.numerator_;
-	denominator_ = f3.denominator_;
-	return *this;
-	
-	/*int new_num = numerator_ + 1;
-	int new_denom = denominator_ + 1;*/
+	this->numerator_ = numerator_ + denominator_;
+	return *this;	
 };
 // 6.2 Increment postfix
 Fraction Fraction:: operator++ (int) {
 	Fraction duplicate(*this);
-	Fraction f1(numerator_, denominator_);
-	Fraction f2 = f1++;
-	//reduce(f3.numerator_, f3.denominator_);
+	this->numerator_ = numerator_+ denominator_;
 	return duplicate;
 };
 // 7.1 Decrement prefix
 Fraction Fraction::operator -- () {
-	int whole_num = denominator_, whole_denom = denominator_;
-	Fraction f1(whole_num, whole_denom);
-	Fraction f2(numerator_, denominator_);
-	Fraction f3 = (f1 - f2);
-	//reduce(f3.numerator_, f3.denominator_);
-	numerator_ = f3.numerator_;
-	denominator_ = f3.denominator_;
-	return f3;
+	this->numerator_ = numerator_ - denominator_;
+	return *this;
 };
 // 7.1 Decrement postfix
 Fraction Fraction:: operator -- (int) {
 	Fraction duplicate(*this);
-	Fraction f1(numerator_, denominator_);
-	Fraction f2 = (--f1) * -1;
-	numerator_ = f2.numerator_;
-	denominator_ = f2.denominator_;
+	this->numerator_ = numerator_ - denominator_;
 	return duplicate;
 };
 

@@ -28,20 +28,20 @@ int main(int argc, char** argv) {
 	
 
 	Fraction f3 =f1 + f2;
-	std::cout << num << "/" << denom << " + " << num_2 << "/" << denom_2 << "= ";
+	std::cout << num << "/" << denom << " + " << num_2 << "/" << denom_2 << " = ";
 	f3.print(); 
 	
 	Fraction f4 = f1 - f2;
-	std::cout << num << "/" << denom << " - " << num_2 << "/" << denom_2 << "= ";
+	std::cout << num << "/" << denom << " - " << num_2 << "/" << denom_2 << " = ";
 	f4.print();
 
 	Fraction f5 = f1 * f2;
-	std::cout << num << "/" << denom << " * " << num_2 << "/" << denom_2 << "= ";
+	std::cout << num << "/" << denom << " * " << num_2 << "/" << denom_2 << " = ";
 	f5.print();
 
 	Fraction f6(num, denom);
 	f6 = f6 / f2;
-	std::cout << num << "/" << denom << " / " << num_2 << "/" << denom_2 << "= ";
+	std::cout << num << "/" << denom << " / " << num_2 << "/" << denom_2 << " = ";
 	f6.print();
 
 	Fraction f7(num, denom);
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
 	
 	Fraction f8 = f7 * f2;
 
-	std::cout << "++" << num << "/" << denom << " * " << num_2 << "/" << denom_2 << "= ";
+	std::cout << "++" << num << "/" << denom << " * " << num_2 << "/" << denom_2 << " = ";
 	f8.print();
 	std::cout << "Значение дроби 1 = ";
 	f7_old.print();
@@ -60,13 +60,10 @@ int main(int argc, char** argv) {
 	Fraction f10 = f9 * f2;
 	
 
-	std::cout << f9_old.get_numerator() << "/" << f9_old.get_denominator() <<"--"<<" * " << num_2 << "/" << denom_2 << "= ";
+	std::cout << f9_old.get_numerator() << "/" << f9_old.get_denominator() <<"--"<<" * " << num_2 << "/" << denom_2 << " = ";
 	f10.print();
 	std::cout << "Значение дроби 1 = ";
 	f7_old.print();
-
-	//std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
-	
 
 	return 0;
 }

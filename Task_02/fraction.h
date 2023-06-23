@@ -28,7 +28,7 @@ public:
 	// 4. Division
 	Fraction operator/(const Fraction& right);
 	// 5. Unary minus
-	/*Fraction operator-(const Fraction& right);*/
+	Fraction operator-();
 	// 6.1 Increment prefix
 	Fraction operator++();
 	// 6.2 Increment postfix
